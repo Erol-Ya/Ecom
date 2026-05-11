@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: ecom-postgres
+    environment:
+      POSTGRES_DB: ecom_db
+      POSTGRES_USER: ecom_user
+      POSTGRES_PASSWORD: ecom_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  pgAdmin:
+    image: dpage/pgadmin4
+    container_name: ecom-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@ecom.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+
+volumes:
+  postgres_data:

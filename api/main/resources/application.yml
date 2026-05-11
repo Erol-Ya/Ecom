@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: ecom
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ecom_db
+    username: ecom_user
+    password: ecom_pass
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
